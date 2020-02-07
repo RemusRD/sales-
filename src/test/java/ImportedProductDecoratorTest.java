@@ -12,7 +12,7 @@ public class ImportedProductDecoratorTest {
 
     @Test
     public void shouldApplyOnlyTheImportedTaxInExemptProduct() {
-        final var result = new ImportedProductDecorator(new ExemptProduct("imported box of chocolates", new BigDecimal("121.25")));
+        final var result = new ImportedProductDecorator(new ExemptProduct("imported box of chocolates", new BigDecimal("11.25")));
 
 
         assertThat(result.getPrice().add(result.getTaxAmount()), is(new BigDecimal("11.85")));
