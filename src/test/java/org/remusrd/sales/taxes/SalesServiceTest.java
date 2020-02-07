@@ -1,9 +1,11 @@
+package org.remusrd.sales.taxes;
+
 import org.junit.Before;
 import org.junit.Test;
-import product.Basket;
-import product.ExemptProduct;
-import product.ImportedProductDecorator;
-import product.TaxedProduct;
+import org.remusrd.sales.taxes.product.Basket;
+import org.remusrd.sales.taxes.product.ExemptProduct;
+import org.remusrd.sales.taxes.product.ImportedProductDecorator;
+import org.remusrd.sales.taxes.product.TaxedProduct;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -41,7 +43,7 @@ public class SalesServiceTest {
 
     }
 
-    //TODO: show product price + tax in receipt
+    //TODO: show org.remusrd.sales.taxes.product price + tax in receipt
     @Test//test case 2
     public void givenABasketWithImportedProductsItShouldApplyTaxes() {
         final var price1 = new BigDecimal("10.00");

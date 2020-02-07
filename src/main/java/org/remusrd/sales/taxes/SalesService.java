@@ -1,6 +1,8 @@
-import product.Basket;
-import product.Product;
-import product.Receipt;
+package org.remusrd.sales.taxes;
+
+import org.remusrd.sales.taxes.product.Basket;
+import org.remusrd.sales.taxes.product.Product;
+import org.remusrd.sales.taxes.product.Receipt;
 
 import java.math.BigDecimal;
 
