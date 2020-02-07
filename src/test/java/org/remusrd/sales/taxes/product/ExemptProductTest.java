@@ -1,9 +1,10 @@
+package org.remusrd.sales.taxes.product;
+
 import org.junit.Test;
-import product.ExemptProduct;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ExemptProductTest {
     @Test
@@ -11,6 +12,6 @@ public class ExemptProductTest {
 
         final var result = new ExemptProduct("anyName", new BigDecimal("10.34"));
 
-        assertEquals(result.getTaxAmount(),BigDecimal.ZERO);
+        assertEquals(result.getTaxAmount(), BigDecimal.ZERO);
     }
 }

@@ -1,4 +1,4 @@
-package product;
+package org.remusrd.sales.taxes.product;
 
 import java.math.BigDecimal;
 

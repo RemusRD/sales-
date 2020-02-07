@@ -1,10 +1,11 @@
+package org.remusrd.sales.taxes.product;
+
 import org.junit.Test;
-import product.TaxedProduct;
 
 import java.math.BigDecimal;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class TaxedProductTest {
 

@@ -1,12 +1,11 @@
+package org.remusrd.sales.taxes.product;
+
 import org.junit.Test;
-import product.ExemptProduct;
-import product.ImportedProductDecorator;
-import product.TaxedProduct;
 
 import java.math.BigDecimal;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class ImportedProductDecoratorTest {
 
@@ -18,6 +17,7 @@ public class ImportedProductDecoratorTest {
         assertThat(result.getPrice().add(result.getTaxAmount()), is(new BigDecimal("11.85")));
         assertThat(result.getTaxAmount(), is(new BigDecimal("0.60")));
     }
+
     @Test
     public void shouldApplyBothTaxesOnNonExemptProduct() {
         final var result = new ImportedProductDecorator(new TaxedProduct("imported bottle of perfume", new BigDecimal("47.50")));
