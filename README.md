@@ -1,0 +1,2 @@
+# sales-taxes
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ace3c0d5f7d5419580666f812fbe70c9)](https://app.codacy.com/manual/RemusRD/sales-taxes?utm_source=github.com&utm_medium=referral&utm_content=RemusRD/sales-taxes&utm_campaign=Badge_Grade_Settings)
