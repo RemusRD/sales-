@@ -15,3 +15,9 @@ jobs:
         java-version: 11.0.x
     - name: Build with Maven
       run: mvn verify
+    - name: codacy code review
+      uses: brpaz/godacov-action@v1
+      with:
+        reportPath: 'path/to/cover/file'
+        codacyToken: ${{ secrets.CODACY_TOKEN }}
+        commitId: ${{ github.sha }}
