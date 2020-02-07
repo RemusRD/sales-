@@ -4,9 +4,7 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.11
@@ -15,9 +13,3 @@ jobs:
         java-version: 11.0.x
     - name: Build with Maven
       run: mvn verify
-    - name: codacy code review
-      uses: brpaz/godacov-action@v1
-      with:
-        reportPath: 'path/to/cover/file'
-        codacyToken: ${{ secrets.CODACY_TOKEN }}
-        commitId: ${{ github.sha }}
