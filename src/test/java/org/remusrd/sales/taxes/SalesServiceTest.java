@@ -97,7 +97,7 @@ public class SalesServiceTest {
 
         final var receipt = sut.purchase(basket);
 
-        assertThat(receipt.getSalesTaxes(), is( new BigDecimal("0.00")));
+        assertThat(receipt.getSalesTaxes(), is(BigDecimal.ZERO));
         assertThat(receipt.getTotal(), is(new BigDecimal("13.34")));
 
     }

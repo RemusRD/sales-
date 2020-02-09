@@ -8,8 +8,8 @@ public class Receipt {
     private final BigDecimal total;
 
     public Receipt(BigDecimal salesTaxes, BigDecimal total) {
-        this.salesTaxes = salesTaxes.setScale(2, RoundingMode.HALF_UP);
-        this.total = total.setScale(2, RoundingMode.HALF_UP);
+        this.salesTaxes = salesTaxes;
+        this.total = total;
     }
 
     public BigDecimal getSalesTaxes() {
