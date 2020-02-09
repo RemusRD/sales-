@@ -49,7 +49,6 @@ public class SalesServiceTest {
 
     }
 
-    //TODO: show org.remusrd.sales.taxes.product price + tax in receipt
     @Test//test case 2
     public void givenABasketWithImportedProductsItShouldApplyTaxes() {
         final var name1 = "imported box of chocolates";
