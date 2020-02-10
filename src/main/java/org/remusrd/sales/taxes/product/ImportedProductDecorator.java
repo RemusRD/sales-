@@ -29,6 +29,7 @@ public class ImportedProductDecorator implements Product {
     private BigDecimal addImportTaxToCurrent() {
         return TaxStrategy.importation().apply(getPrice()).add(product.getTaxAmount());
     }
+
     private BigDecimal roundToTwoDecimals(BigDecimal taxAmount) {
         return taxAmount.divide(new BigDecimal("0.05"), 0, RoundingMode.UP).multiply(new BigDecimal("0.05"));
     }

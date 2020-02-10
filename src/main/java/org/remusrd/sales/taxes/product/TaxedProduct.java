@@ -1,7 +1,6 @@
 package org.remusrd.sales.taxes.product;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class TaxedProduct implements Product {
     private final String name;

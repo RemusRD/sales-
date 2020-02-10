@@ -2,7 +2,6 @@ package org.remusrd.sales.taxes.product;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-import java.util.StringJoiner;
 
 public class ReceiptProduct {
     private final String name;
