@@ -22,6 +22,6 @@ public class TaxedProduct implements Product {
 
     @Override
     public BigDecimal getTaxAmount() {
-        return price.multiply(BigDecimal.TEN).divide(new BigDecimal(100), 2, RoundingMode.HALF_UP);
+        return TaxStrategy.basic().apply(price);
     }
 }

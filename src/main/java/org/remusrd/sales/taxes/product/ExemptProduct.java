@@ -21,7 +21,7 @@ public class ExemptProduct implements Product {
 
     @Override
     public BigDecimal getTaxAmount() {
-        return BigDecimal.ZERO;
+        return TaxStrategy.exempt().apply(price);
     }
 
 }
