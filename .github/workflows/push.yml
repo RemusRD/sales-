@@ -13,3 +13,7 @@ jobs:
         java-version: 11.0.x
     - name: Build with Maven
       run: mvn verify
+    - name: Upload coverage to Codacy
+      uses: ljmf00/codacy-coverage-action@1.0.0
+      with:
+        token: ${{secrets.CODACY_PROJECT_TOKEN}}
