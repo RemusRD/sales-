@@ -5,10 +5,12 @@ import java.math.BigDecimal;
 public class ExemptProduct implements Product {
     private final String name;
     private final BigDecimal price;
+    private final TaxStrategy calculationMethod;
 
     public ExemptProduct(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
+        this.calculationMethod = TaxStrategy.exempt();
     }
 
     public String getName() {
@@ -21,7 +23,12 @@ public class ExemptProduct implements Product {
 
     @Override
     public BigDecimal getTaxAmount() {
-        return TaxStrategy.exempt().apply(price);
+        return calculationMethod.apply(price);
+    }
+
+    @Override
+    public TaxStrategy getTaxCalculationMethod() {
+        return calculationMethod;
     }
 
 }

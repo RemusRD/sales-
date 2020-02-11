@@ -10,6 +10,8 @@ public interface Product {
 
     BigDecimal getTaxAmount();
 
+    TaxStrategy getTaxCalculationMethod();
+
     default BigDecimal getTaxedPrice() {
         return this.getPrice().add(getTaxAmount());
     }

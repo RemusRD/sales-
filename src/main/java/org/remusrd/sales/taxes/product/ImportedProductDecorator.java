@@ -3,11 +3,15 @@ package org.remusrd.sales.taxes.product;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static org.remusrd.sales.taxes.product.TaxStrategy.importation;
+
 public class ImportedProductDecorator implements Product {
     private final Product product;
+    private final TaxStrategy calculationMethod;
 
     public ImportedProductDecorator(Product product) {
         this.product = product;
+        this.calculationMethod = importation().combine(product.getTaxCalculationMethod());
     }
 
     @Override
@@ -26,8 +30,13 @@ public class ImportedProductDecorator implements Product {
         return roundToTwoDecimals(taxAmount);
     }
 
+    @Override
+    public TaxStrategy getTaxCalculationMethod() {
+        return product.getTaxCalculationMethod();
+    }
+
     private BigDecimal addImportTaxToCurrent() {
-        return TaxStrategy.importation().apply(getPrice()).add(product.getTaxAmount());
+        return calculationMethod.apply(product.getPrice());
     }
 
     private BigDecimal roundToTwoDecimals(BigDecimal taxAmount) {

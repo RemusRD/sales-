@@ -5,10 +5,13 @@ import java.math.BigDecimal;
 public class TaxedProduct implements Product {
     private final String name;
     private final BigDecimal price;
+    private final TaxStrategy calculationMethod;
+
 
     public TaxedProduct(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
+        this.calculationMethod = TaxStrategy.basic();
     }
 
     public String getName() {
@@ -21,6 +24,10 @@ public class TaxedProduct implements Product {
 
     @Override
     public BigDecimal getTaxAmount() {
-        return TaxStrategy.basic().apply(price);
+        return calculationMethod.apply(price);
+    }
+
+    public TaxStrategy getTaxCalculationMethod() {
+        return calculationMethod;
     }
 }
